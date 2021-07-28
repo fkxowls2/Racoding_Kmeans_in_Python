@@ -9,8 +9,12 @@
 > * 마케팅에서 세그멘테이션으로 고객들을 특성에 맞는 사람들끼리 군집화
 > * 보험회사에서 세그멘테이션으로 맞춤형 보험상품 개발 및 광고에 활용
 > * 미국의 경찰의 순찰 지역을 정하는데 활용해서 범죄율을 줄이는데 사용
-### 직접 만든 K-means 함수와 R의 kmeans 함수와 성능 비교
-|my_kmeans|R의 kmeans|
-|:--:|:--:|
-|![image](https://user-images.githubusercontent.com/72850237/126924786-da3a8b32-4e61-416b-9fda-4b6737c3a3af.png)|![image](https://user-images.githubusercontent.com/72850237/126924837-24b9cb2b-94ba-45d1-8b4d-e47878088817.png)|
-|정확도 0.93|정확도 0.927|
+### 직접 만든 K-means 함수와 사이킷런의 kmeans 함수와 성능 비교
+* 사이킷런의 kmeans와 달리 my_kmeans는 초기 클러스터 중앙을 완전 랜덤으로 설정하여,
+
+  랜덤값(씨드값)에 따른 분류결과 격차가 컸음
+* 그래서 my_kmeans에 옵션을 추가하여 초기 클러스터 중앙을 랜덤이 아닌 중앙값으로 설정할 수 있도록 개선
+
+|기본|개선 전|개선 후|
+|:--:|:--:|:--:|
+|성능 비교 결과|![image](https://user-images.githubusercontent.com/72850237/127350777-e4694338-03a2-4445-ac3a-1490789ce92b.png)|![image](https://user-images.githubusercontent.com/72850237/127350842-5db4cca5-aaed-4439-ba26-9ab1df4a4f7f.png)|
